@@ -1,0 +1,22 @@
+{
+    "manifest_version": 2,
+    "name": "Gradenotifier",
+    "version": "1.0",
+    "description": "Chrome extension component for Gradenotifier",
+    "icons": {"152": "icon152.png"},
+    "permissions": ["activeTab"],
+
+    "content_scripts": [{
+        "matches": ["https://schoollogic.bsd.ca/teacherlogic/GradeEntryTask/*"],
+        "js":      ["jquery.js", "content.js"]
+    }],
+
+    "background": {
+        "scripts": ["jquery.js", "sender.js"],
+        "persistent": false
+    },
+
+    "browser_action": {
+        "default_title": "Grade Notifier"
+    } 
+}
